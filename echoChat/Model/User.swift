@@ -43,6 +43,7 @@ class User {
         guard status == kCCSuccess else {
             fatalError("PBKDF2 failed")
         }
+        print(Data(derivedKey).base64EncodedString())
         return Data(derivedKey).base64EncodedString()
     }
     

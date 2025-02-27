@@ -14,13 +14,13 @@ struct MainView: View {
     
     var body: some View {
         TabView {
-            /*AllEchosView()
+            FeedView()
                 .tabItem {
-                    Label("All Echos", systemImage: "list.bullet")
-                }*/
+                    Label("Feed", systemImage: "bubble.left.and.bubble.right")
+                }
             EchoView()
                 .tabItem {
-                    Label("Echo", systemImage: "speaker")
+                    Label("Echo", systemImage: "bubble.left")
                 }
             Settings()
                 .tabItem {
