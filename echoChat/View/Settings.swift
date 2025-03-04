@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct Settings: View {
+    
+    @AppStorage("isLoggedIn") private var isLoggedIn: Bool = false
+    
     var body: some View {
-        Text("Settings")
+        VStack {
+            Text("Settings")
+            Button {
+                isLoggedIn = false
+            } label: {
+                Text("Logout")
+            }
+        }
     }
 }
 

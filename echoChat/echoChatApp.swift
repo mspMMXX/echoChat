@@ -12,6 +12,7 @@ import FirebaseCore
 struct echoChatApp: App {
     
     @AppStorage("isLoggedIn") private var isLoggedIn:Bool = false
+    @StateObject var userSession: UserSession = UserSession()
     
     init() {
         FirebaseApp.configure()
@@ -20,8 +21,10 @@ struct echoChatApp: App {
         WindowGroup {
             if isLoggedIn {
                 MainView()
+                    .environmentObject(userSession)
             } else {
                 LoginView()
+                    .environmentObject(userSession)
             }
         }
     }
